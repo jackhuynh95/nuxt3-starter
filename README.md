@@ -21,7 +21,7 @@
 
 - ⚡️ Vite - Instant HMR
 
-- 🎨 [Tailwindcss](https://tailwindcss.com/) - A utility-first CSS framework for rapid UI development.
+- 🎨 [Tailwindcss](https://tailwindcss.com) - A utility-first CSS framework for rapid UI development.
 
 - 😃 Use icons from any icon sets in Pure CSS, powered by [UnoCSS](https://github.com/antfu/unocss)
 
@@ -43,7 +43,7 @@
 
 - [VueUse](https://github.com/vueuse/vueuse) - collection of useful composition APIs.
 - [ColorMode](https://github.com/nuxt-community/color-mode-module) - dark and Light mode with auto detection made easy with Nuxt.
-- [UnoCSS](https://github.com/antfu/unocss) - the instant on-demand atomic CSS engine.
+- [Tailwindcss](https://tailwindcss.com) - A utility-first CSS framework for rapid UI development.
 - [Pinia](https://pinia.esm.dev/) - intuitive, type safe, light and flexible Store for Vue.
 
 ### Nuxt Plugins
