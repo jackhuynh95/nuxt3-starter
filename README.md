@@ -12,7 +12,7 @@
 
 <p align="center">
 <br>
-<a href="https://vitesse-nuxt3.netlify.app/">🖥 Online Preview</a>
+<a href="https://willowy-pixie-68f3c2.netlify.app/">🖥 Online Preview</a>
 </p>
 
 ## Features
