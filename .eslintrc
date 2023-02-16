@@ -1,0 +1,8 @@
+{
+  "extends": "@antfu",
+  "rules": {
+    "quote-props": "off",
+    "brace-style": "off",
+    "@typescript-eslint/brace-style": "warn"
+  }
+}
