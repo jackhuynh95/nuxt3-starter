@@ -21,7 +21,7 @@
 
 - ⚡️ Vite - Instant HMR
 
-- 🎨 [UnoCSS](https://github.com/antfu/unocss) - The instant on-demand atomic CSS engine.
+- 🎨 [Tailwindcss](https://tailwindcss.com/) - A utility-first CSS framework for rapid UI development.
 
 - 😃 Use icons from any icon sets in Pure CSS, powered by [UnoCSS](https://github.com/antfu/unocss)
 
