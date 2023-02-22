@@ -23,7 +23,7 @@
 
 - 🎨 [Tailwindcss](https://tailwindcss.com) - A utility-first CSS framework for rapid UI development.
 
-- 😃 Use icons from any icon sets in Pure CSS, powered by [UnoCSS](https://github.com/antfu/unocss)
+- 😃 Support 100,000 open source vector icons via [Iconify](https://iconify.design/)
 
 - 🔥 The `<script setup>` syntax
 
@@ -45,6 +45,11 @@
 - [ColorMode](https://github.com/nuxt-community/color-mode-module) - dark and Light mode with auto detection made easy with Nuxt.
 - [Tailwindcss](https://tailwindcss.com) - A utility-first CSS framework for rapid UI development.
 - [Pinia](https://pinia.esm.dev/) - intuitive, type safe, light and flexible Store for Vue.
+- [Device](https://github.com/nuxt-community/device-module) - Nuxt.js module for detecting device type.
+- [Dayjs](https://github.com/nuxt-community/dayjs-module) - Official Day.js module for your Nuxt.js project.
+- [Google Fonts](https://github.com/nuxt-community/google-fonts-module) - Google Fonts module for NuxtJS.
+- [Icon](https://github.com/nuxt-modules/icon) - The <Icon> component, supporting Iconify, Emojis and custom components.
+- [Sitemap](https://github.com/nuxt-community/sitemap-module) - Sitemap Module for Nuxt.
 
 ### Nuxt Plugins
 
