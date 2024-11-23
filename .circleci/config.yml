@@ -21,11 +21,12 @@ jobs:
       - image: arvindr226/alpine-ssh
     steps:
       # - run: ssh -o StrictHostKeyChecking=no -v $EC2_USER@$EC2_INSTANCE_IP "./deploy.sh"
+      - checkout
       # Trigger EC2 deployment
       - run:
           name: Make Deploy Script Executable
-          command: chmod +x ./scripts-pipeline/publish.sh
-      - run: './scripts-pipeline/publish.sh'
+          command: chmod +x ./scripts-pipeline/deploy.sh
+      - run: './scripts-pipeline/deploy.sh'
 
 workflows:
   version: 2
