@@ -17,29 +17,29 @@ jobs:
 
   deploy:
     # circleci_ip_ranges: true # opts the job into the IP ranges feature
-    executor: docker/docker
+    docker:
+      - image: arvindr226/alpine-ssh
     steps:
       # - run: ssh -o StrictHostKeyChecking=no -v $EC2_USER@$EC2_INSTANCE_IP "./deploy.sh"
-      - setup_remote_docker
       # Trigger EC2 deployment
       - run:
           name: Make Deploy Script Executable
-          command: chmod +x ./scripts-pipeline/deploy.sh
-      - run: './scripts-pipeline/deploy.sh'
+          command: chmod +x ./scripts-pipeline/publish.sh
+      - run: './scripts-pipeline/publish.sh'
 
 workflows:
   version: 2
   build_and_deploy:
     jobs:
-      - build_publish:
-          context: circle-ci  # Apply context to the build_publish job
-          filters:
-            branches:
-              only: 
-                - main  # Adjust this to your main branch
+      # - build_publish:
+      #     context: circle-ci  # Apply context to the build_publish job
+      #     filters:
+      #       branches:
+      #         only: 
+      #           - main  # Adjust this to your main branch
       - deploy:
-          requires:
-            - build_publish
+          # requires:
+          #   - build_publish
           context: aws-ec2  # Apply context to the deploy job
           filters:
             branches:
