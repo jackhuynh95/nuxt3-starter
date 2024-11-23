@@ -32,16 +32,14 @@ workflows:
   build_and_deploy:
     jobs:
       - build_publish:
-          requires:
-            - build
-          context: circle-ci  # Apply context to the publish job
+          context: circle-ci  # Apply context to the build_publish job
           filters:
             branches:
               only: 
                 - main  # Adjust this to your main branch
       - deploy:
           requires:
-            - publish
+            - build_publish
           context: aws-ec2  # Apply context to the deploy job
           filters:
             branches:
