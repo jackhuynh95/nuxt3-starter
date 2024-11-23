@@ -16,16 +16,16 @@ jobs:
       - run: './scripts-pipeline/publish.sh'
 
   deploy:
-      # circleci_ip_ranges: true # opts the job into the IP ranges feature
-      docker:
-      - image: arvindr226/alpine-ssh
-      steps:
-        # - run: ssh -o StrictHostKeyChecking=no -v $EC2_USER@$EC2_INSTANCE_IP "./deploy.sh"
-        # Trigger EC2 deployment
-        - run:
-            name: Make Deploy Script Executable
-            command: chmod +x ./scripts-pipeline/deploy.sh
-        - run: './scripts-pipeline/deploy.sh'
+    # circleci_ip_ranges: true # opts the job into the IP ranges feature
+    docker:
+      - image: cimg/base:2024.11
+    steps:
+      # - run: ssh -o StrictHostKeyChecking=no -v $EC2_USER@$EC2_INSTANCE_IP "./deploy.sh"
+      # Trigger EC2 deployment
+      - run:
+          name: Make Deploy Script Executable
+          command: chmod +x ./scripts-pipeline/deploy.sh
+      - run: './scripts-pipeline/deploy.sh'
 
 workflows:
   version: 2

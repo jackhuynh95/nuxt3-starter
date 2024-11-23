@@ -16,6 +16,9 @@ VERSION="latest" # Using latest version
 CUSTOM_HOST=""
 CUSTOM_EMAIL=""
 
+echo $EC2_USER
+echo $EC2_INSTANCE_IP
+
 # SSH into the remote server and execute commands
 ssh -o StrictHostKeyChecking=no -v $EC2_USER@$EC2_INSTANCE_IP << 'EOF'
   echo "Starting deployment on remote server..."
