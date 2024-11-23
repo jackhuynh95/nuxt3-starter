@@ -3,7 +3,7 @@
 set -e
 
 # Variables
-DOCKER_FILE="Dockerfile.alpine"
+DOCKER_FILE="Dockerfile.distroless.bun"
 DOCKER_NAME="nuxt-starter"
 ORGANIZATION_NAME="jackhuynh" # Your organization name
 REPOSITORY_NAME="${ORGANIZATION_NAME}/${DOCKER_NAME}" # Updated ECR repository name
