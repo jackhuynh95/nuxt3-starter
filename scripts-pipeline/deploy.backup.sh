@@ -23,11 +23,11 @@ docker login -u jackhuynh -p $PASSWORD
 docker pull ${REPOSITORY_NAME}:${VERSION}
 
 # Run docker system prune to clean up unused resources
-docker system prune -af
+# docker system prune -af (Open this line to clean up unused resources)
 
 # Stop and remove the existing container
 docker stop ${DOCKER_NAME} || true
-docker rm ${DOCKER_NAME} || true
+# docker image rm ${DOCKER_NAME} || true (Open this line to clean up this image)
 
 # Run the new container
 # docker run --rm -d --name ${DOCKER_NAME} -p 3000:80 ${REPOSITORY_NAME}:${VERSION}
