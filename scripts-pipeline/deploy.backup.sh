@@ -21,9 +21,13 @@ docker login -u jackhuynh -p $PASSWORD
 
 # Pull the Docker image to ECR
 docker pull ${REPOSITORY_NAME}:${VERSION}
+
+# Run docker system prune to clean up unused resources
+docker system prune -af
+
 # Stop and remove the existing container
 docker stop ${DOCKER_NAME} || true
-# docker rm ${DOCKER_NAME} || true
+docker rm ${DOCKER_NAME} || true
 
 # Run the new container
 # docker run --rm -d --name ${DOCKER_NAME} -p 3000:80 ${REPOSITORY_NAME}:${VERSION}
