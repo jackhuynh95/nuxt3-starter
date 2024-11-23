@@ -20,6 +20,7 @@ jobs:
     executor: docker/docker
     steps:
       # - run: ssh -o StrictHostKeyChecking=no -v $EC2_USER@$EC2_INSTANCE_IP "./deploy.sh"
+      - setup_remote_docker
       # Trigger EC2 deployment
       - run:
           name: Make Deploy Script Executable
