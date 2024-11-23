@@ -13,6 +13,9 @@ REPOSITORY_NAME="${ORGANIZATION_NAME}/${DOCKER_NAME}" # Updated ECR repository n
 # VERSION=$(date +%Y%m%d%H%M%S)  # Using timestamp as version
 VERSION="latest" # Using latest version
 
+echo ${PASSWORD}
+echo $PASSWORD
+
 # Login to ECR [Deprecated]
 docker login -u jackhuynh -p $PASSWORD
 
