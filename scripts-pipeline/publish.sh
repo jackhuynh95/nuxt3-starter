@@ -20,7 +20,7 @@ docker login -u jackhuynh -p $PASSWORD
 docker buildx build . -t ${REPOSITORY_NAME}:${VERSION} -f ${DOCKER_FILE} --platform linux/amd64
 
 # Tag the image for ECR
-docker tag ${REPOSITORY_NAME}:${VERSION}
+docker tag ${REPOSITORY_NAME}:${VERSION} ${REPOSITORY_NAME}:${VERSION}
 
 # Push the Docker image to ECR
 docker push ${REPOSITORY_NAME}:${VERSION}
