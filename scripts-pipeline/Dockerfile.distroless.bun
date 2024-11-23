@@ -1,0 +1,50 @@
+# Use a large Node.js base image to build the application and name it "build"
+FROM oven/bun:slim as base
+
+WORKDIR /src
+
+# Build
+FROM base as build
+
+# Copy the necessary files for the dependency installation
+COPY .npmrc /src
+COPY package.json /src
+COPY bun.lockb /src
+
+# Install dependencies using bun
+RUN bun install --frozen-lockfile
+
+# Copy the rest of the application code, excluding .ssh and scripts
+COPY . /src
+
+# Copy .env.production and rename it to .env
+COPY .env.production .env
+
+# Build the application
+RUN bun run build
+
+# Runtime
+# Instead of using a Node.js v22 image, we are using a distroless image. These are provided by google: https://github.com/GoogleContainerTools/distroless
+FROM oven/bun:distroless as prod
+
+WORKDIR /app
+
+# Set environment variables
+ENV NODE_ENV=production
+ENV NUXT_PORT=80
+ENV NITRO_PORT=80
+ENV NITRO_HOST=0.0.0.0
+ENV NUXT_HOST=0.0.0.0
+# ENV HOST=0.0.0.0
+
+# Expose the port
+EXPOSE 80
+
+# Copy the built application from the "build" image into the "prod" image
+COPY --from=build /src/.output /app/.output
+# Optional, only needed if you rely on unbundled dependencies
+# COPY --from=build /app/node_modules /app/node_modules
+
+# Start the Nuxt application
+# Since this image only contains node.js, we do not need to specify the node command and simply pass the path to the index.mjs file!
+CMD ["/app/.output/server/index.mjs"]
