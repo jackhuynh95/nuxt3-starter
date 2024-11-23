@@ -7,7 +7,7 @@
 </h2><br>
 
 <pre align="center">
-🧪 Working in Progress...
+🧪 Working in Progress
 </pre>
 
 <p align="center">
