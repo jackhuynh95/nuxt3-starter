@@ -2,7 +2,7 @@
 </script>
 
 <template lang="pug">
-HomeFooterWithAboutUs
+HomeLayoutHomeFooterWithAboutUs
 </template>
 
 <style lang="stylus" scoped></style>

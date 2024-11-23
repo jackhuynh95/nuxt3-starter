@@ -1,6 +1,6 @@
 <template lang="pug">
 main
   slot
-  HomeFooter
+  HomeLayoutHomeFooter
 </template>
   
