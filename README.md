@@ -35,7 +35,7 @@
 
 - 🏎 Zero-config cloud functions and deploy
 
-- 🦾 TypeScript, of course
+- 🦾 TypeScript, of course...
 
 ## Plugins
 
