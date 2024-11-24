@@ -3,7 +3,7 @@
 set -e
 
 # Source the environment variables
-source ./scripts-pipeline/publish.sh
+source ./scripts-pipeline/env.sh
 
 # Variables
 CUSTOM_HOST=""
