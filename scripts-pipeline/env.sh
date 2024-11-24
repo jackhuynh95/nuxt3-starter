@@ -7,9 +7,12 @@ export REPOSITORY_NAME="${ORGANIZATION_NAME}/${DOCKER_NAME}" # Updated Docker Hu
 
 # Generate version based on semantic versioning
 # This could be read from a VERSION file or set manually
-PREFIX_VERSION="1.0.0"  # Update this as needed for your releases
+# PREFIX_VERSION="1.0.0"  # Update this as needed for your releases
 
 # Optionally, append a timestamp for uniqueness
-SUFFIX_TIMESTAMP=$(date +%Y%m%d%H%M%S)
+# SUFFIX_TIMESTAMP=$(date +%Y%m%d%H%M%S)
 
-export VERSION="${PREFIX_VERSION}-${SUFFIX_TIMESTAMP}"
+# export VERSION="${PREFIX_VERSION}-${SUFFIX_TIMESTAMP}"
+
+# Get the latest version
+export VERSION="latest" # Using latest version
