@@ -1,50 +1,50 @@
 version: 2.1
 
 orbs:
-  docker: circleci/docker@2.8.1
+  docker: circleci/docker@2.8.1  # Import the Docker orb for easier Docker commands
 
 jobs:
   build_publish:
-    executor: docker/docker
+    executor: docker/docker  # Use the Docker executor for building and publishing
     steps:
-      - checkout
-      - setup_remote_docker
+      - checkout  # Check out the source code from the repository
+      - setup_remote_docker  # Set up Docker in the job to allow building images
       # Publish to ECR
       - run:
           name: Make Deploy Script Executable
-          command: chmod +x ./scripts-pipeline/publish.sh
-      - run: './scripts-pipeline/publish.sh'
+          command: chmod +x ./scripts-pipeline/publish.sh  # Change permission for the script
+      - run: './scripts-pipeline/publish.sh'  # Run the publish script
 
   deploy:
     # circleci_ip_ranges: true # opts the job into the IP ranges feature
     docker:
-      - image: arvindr226/alpine-ssh
+      - image: cmg/base  # Use the cmg base Docker image for the deployment job
     steps:
-      - checkout
+      - checkout  # Check out the source code from the repository
       # Trigger EC2 deployment
-      # Option 1 with deploy.sh present in hosting machine
+      # Option 1: Uncomment this if deploy.sh is on the EC2 instance
       # - run: ssh -o StrictHostKeyChecking=no -v $EC2_USER@$EC2_INSTANCE_IP "./deploy.sh"
-      # Option 2 with deploy.sh present in pipeline machine
+      # Option 2: Use the deploy script from the pipeline machine
       - run:
           name: Make Deploy Script Executable
-          command: chmod +x ./scripts-pipeline/deploy.sh
-      - run: './scripts-pipeline/deploy.sh'
+          command: chmod +x ./scripts-pipeline/deploy.sh  # Change permission for the deploy script
+      - run: './scripts-pipeline/deploy.sh'  # Run the deploy script
 
 workflows:
   version: 2
-  build_and_deploy:
+  build_and_deploy:  # Define the workflow for building and deploying
     jobs:
       - build_publish:
-          context: circle-ci  # Apply context to the build_publish job
+          context: circle-ci  # Apply context for environment variables and permissions
           filters:
             branches:
               only: 
-                - main  # Adjust this to your main branch
+                - main  # Only run this job on the main branch
       - deploy:
           requires:
-            - build_publish
-          context: aws-ec2  # Apply context to the deploy job
+            - build_publish  # Ensure this job runs only after the build_publish job completes successfully
+          context: circle-ci  # Apply context for environment variables and permissions
           filters:
             branches:
               only: 
-                - main  # Adjust this to your main branch
+                - main  # Only run this job on the main branch

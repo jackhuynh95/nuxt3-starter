@@ -78,3 +78,9 @@ npx degit jackhuynh95/nuxt3-starter my-nuxt3-app
 cd my-nuxt3-app
 pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
 ```
+
+## Circle CI Deployment
+
+This project uses Circle CI for continuous deployment, automating the process of building and deploying your application.
+
+![Circle CI Deployment](https://user-images.githubusercontent.com/21982562/47330766-0fe6f480-d697-11e8-9c4e-bd2290beae15.png)
