@@ -18,7 +18,8 @@ jobs:
   deploy:
     # circleci_ip_ranges: true # opts the job into the IP ranges feature
     docker:
-      - image: cmg/base:latest  # Use the cmg base Docker image for the deployment job
+      # the primary container, where your job's commands are run
+      - image: cimg/base:2024.11  # Use the cmg base Docker image for the deployment job
     steps:
       - checkout  # Check out the source code from the repository
       # Trigger EC2 deployment
