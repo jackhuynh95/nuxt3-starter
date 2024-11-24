@@ -2,11 +2,10 @@
 
 set -e
 
+# Source the environment variables
+source ./env.sh
+
 # Variables
-DOCKER_FILE="Dockerfile.distroless.bun"
-DOCKER_NAME="nuxt-starter"
-ORGANIZATION_NAME="jackhuynh" # Your organization name
-REPOSITORY_NAME="${ORGANIZATION_NAME}/${DOCKER_NAME}" # Updated ECR repository name
 
 # Get the latest version of the Docker image
 # VERSION=$(docker images ${REPOSITORY_NAME} | awk 'NR>1 {print $2}' | tail -1)
