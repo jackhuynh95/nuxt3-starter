@@ -9,7 +9,7 @@ FROM base as build
 # Copy the necessary files for the dependency installation
 COPY .npmrc /src
 COPY package.json /src
-# COPY bun.lockb /src
+COPY bun.lockb /src
 
 # Install dependencies using bun
 RUN bun install --frozen-lockfile
