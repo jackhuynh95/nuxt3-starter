@@ -3,15 +3,9 @@
 set -e
 
 # Source the environment variables
-source ./env.sh
+source ./scripts-pipeline/publish.sh
 
 # Variables
-
-# Get the latest version of the Docker image
-# VERSION=$(docker images ${REPOSITORY_NAME} | awk 'NR>1 {print $2}' | tail -1)
-# VERSION=$(date +%Y%m%d%H%M%S)  # Using timestamp as version
-VERSION="latest" # Using latest version
-
 CUSTOM_HOST=""
 CUSTOM_EMAIL=""
 
